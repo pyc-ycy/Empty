@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Empty</string>
+    <string name="android_hello">Android你好</string>
+    <string name="marquee">用于测试跑马灯效果的文本文字，
+        为了效果明显内容长度长一些
+    </string>
+    <string name="btn_text1">Button</string>
+    <string name="btn_click">点击按钮</string>
+</resources>

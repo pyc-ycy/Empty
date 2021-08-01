@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--带阴影的TextView-->
+    <TextView
+        android:id="@+id/shadow_textview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:shadowColor="@color/red"
+        android:shadowDx="10.0"
+        android:shadowDy="10.0"
+        android:shadowRadius="5.0"
+        android:text="@string/android_hello"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+    <!--跑马灯效果-->
+    <TextView
+        android:id="@+id/marquee"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="@string/marquee"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:ignore="RtlCompat,RtlHardcoded">
+
+        <requestFocus />
+    </TextView>
+
+</LinearLayout>
