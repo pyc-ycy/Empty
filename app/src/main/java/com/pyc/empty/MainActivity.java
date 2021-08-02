@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
 
-        setContentView(R.layout.button);
+        setContentView(R.layout.edit_text);
 
-        Button btn = findViewById(R.id.btn_click);
+//        Button btn = findViewById(R.id.btn_click);
         /*点击监听器*/
         /*btn.setOnClickListener(v -> Log.e(TAG, "onclick"));*/
 
-        /*长按监听器*/
+        /*长按监听器
         btn.setOnLongClickListener(v -> {
             Log.e(TAG, "onLongClick");
             return true;
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnTouchListener((v, event) -> {
             Log.e(TAG, "onTouch" + event.getAction());
             return false;
-        });
+        });*/
     }
 
     public void PClick(View view) {

@@ -6,4 +6,5 @@
     <color name="text">#000000</color>
     <color name="text_background">#A3A6E5</color>
     <color name="red">#FF0000</color>
+    <color name="gray">#A4A4A4</color>
 </resources>

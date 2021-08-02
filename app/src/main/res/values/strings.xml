@@ -6,4 +6,6 @@
     </string>
     <string name="btn_text1">Button</string>
     <string name="btn_click">点击按钮</string>
+    <string name="hint_text">请输入</string>
+    <string name="username_input_hint">请输入用户名：</string>
 </resources>
