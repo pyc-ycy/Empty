@@ -4,9 +4,12 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * @author 彭友聪
@@ -14,8 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "leq";
-    private EditText user;
-    private EditText pwd;
+    private ProgressBar pb;
+    private ProgressBar PBH;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -23,34 +26,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
 
-        setContentView(R.layout.image_view);
+        setContentView(R.layout.progress_bar);
+        pb = findViewById(R.id.progress_bar_native);
+        PBH = findViewById(R.id.PBH);
 
-        /*模拟登陆功能*/
-        /*Button login = findViewById(R.id.login);
-        user = findViewById(R.id.user);
-        pwd = findViewById(R.id.pwd);
-        login.setOnClickListener(V -> {
-            String user_value = user.getText().toString();
-            String pwd_value = pwd.getText().toString();
-            System.out.println("\nuser:\t" + user_value + "\npwd:\t" + pwd_value);
-        });*/
-
-//        Button btn = findViewById(R.id.btn_click);
-        /*点击监听器*/
-        /*btn.setOnClickListener(v -> Log.e(TAG, "onclick"));*/
-
-        /*长按监听器
-        btn.setOnLongClickListener(v -> {
-            Log.e(TAG, "onLongClick");
-            return true;
-        });
-        btn.setOnTouchListener((v, event) -> {
-            Log.e(TAG, "onTouch" + event.getAction());
-            return false;
-        });*/
     }
 
     public void PClick(View view) {
         Log.e(TAG, "onClick");
+    }
+
+    public void progressController(View view) {
+        if(pb.getVisibility() == View.GONE) {
+            pb.setVisibility(View.VISIBLE);
+        } else {
+            pb.setVisibility(View.GONE);
+        }
+    }
+
+    public void progressHorizontalController(View view) throws InterruptedException {
+        PBH.setIndeterminate(false);
+        PBH.setProgress(0);
+        int step = 2;
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run() {
+                int value = PBH.getProgress();
+                PBH.setProgress(value + step);
+            }
+        }, 0, 1000);
     }
 }

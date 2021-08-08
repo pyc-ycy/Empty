@@ -10,4 +10,6 @@
     <string name="username_input_hint">请输入用户名：</string>
     <string name="password">请输入密码：</string>
     <string name="login">登陆</string>
+    <string name="progress_bar">显示/隐藏进度条</string>
+    <string name="progress_bar_horizontal">开始计时</string>
 </resources>

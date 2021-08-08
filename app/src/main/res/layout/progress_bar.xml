@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/progress_bar_native"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/progress_controller"
+        android:background="@color/colorPrimary"
+        android:text="@string/progress_bar"
+        android:textColor="@color/white"
+        android:onClick="progressController"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/text"
+        />
+    <!--水平进度条-->
+    <ProgressBar
+        android:id="@+id/PBH"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="150"
+        android:indeterminate="true"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="@string/progress_bar_horizontal"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:onClick="progressHorizontalController"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
