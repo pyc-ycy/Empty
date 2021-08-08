@@ -6,11 +6,43 @@
     android:layout_height="match_parent">
 
     <EditText
+        android:id="@+id/user"
         android:hint="@string/username_input_hint"
+        android:drawableLeft="@drawable/verified_user_24"
+        android:paddingLeft="30dp"
+        android:background="@color/white"
         android:textColorHint="@color/red"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:autofillHints="pyc-ycy"
         android:inputType="text" />
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/text"
+        />
+    <EditText
+        android:id="@+id/pwd"
+        android:hint="@string/password"
+        android:drawableLeft="@drawable/password"
+        android:paddingLeft="30dp"
+        android:background="@color/white"
+        android:textColorHint="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints="123456789"
+        android:inputType="numberPassword" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/text"
+        />
+    <Button
+        android:id="@+id/login"
+        android:text="@string/login"
+        android:background="@color/blue"
+        android:layout_margin="5dp"
+        android:layout_width="140dp"
+        android:layout_height="50dp"/>
 </LinearLayout>

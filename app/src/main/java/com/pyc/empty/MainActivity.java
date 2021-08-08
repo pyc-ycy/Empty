@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "leq";
+    private EditText user;
+    private EditText pwd;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -21,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_main);
 
         setContentView(R.layout.edit_text);
+        /*模拟登陆功能*/
+        Button login = findViewById(R.id.login);
+        user = findViewById(R.id.user);
+        pwd = findViewById(R.id.pwd);
+        login.setOnClickListener(V -> {
+            String user_value = user.getText().toString();
+            String pwd_value = pwd.getText().toString();
+            System.out.println("\nuser:\t" + user_value + "\npwd:\t" + pwd_value);
+        });
 
 //        Button btn = findViewById(R.id.btn_click);
         /*点击监听器*/
