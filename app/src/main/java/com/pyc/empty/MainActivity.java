@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void progressHorizontalController(View view) throws InterruptedException {
+    public void progressHorizontalController(View view) {
         PBH.setIndeterminate(false);
         PBH.setProgress(0);
         int step = 2;
