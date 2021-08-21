@@ -2,16 +2,14 @@ package com.pyc.empty;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -21,9 +19,10 @@ import java.util.TimerTask;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "leq";
+    private static final String TAG = "pyc:";
     private ProgressBar pb;
     private ProgressBar PBH;
+    /*notification*/
     private NotificationManager notificationManager;
     private Notification notification;
 
@@ -33,25 +32,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
 
-        setContentView(R.layout.notification);
+        setContentView(R.layout.toolbar);
+
+        // toolbar
+        Toolbar tb = findViewById(R.id.tb);
+        tb.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "onclick: toolbar was clicked!");
+            }
+        });
+
+        // progress bar
         pb = findViewById(R.id.progress_bar_native);
         PBH = findViewById(R.id.PBH);
-
-//        notification
-        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        /*判断机器的Android版本是否大于8.0*/
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel notificationChannel = new NotificationChannel("pyc",
-                    "系统通知",
-                    NotificationManager.IMPORTANCE_HIGH);
-            notificationManager.createNotificationChannel(notificationChannel);
-        }
-        notification = new NotificationCompat
-                .Builder(this, "pyc")
-                .setContentTitle("Notification Title")
-                .setContentText("This is content text of current notification")
-                .setSmallIcon(R.drawable.ic_baseline_notifications_24)
-                .build();
 
 
     }

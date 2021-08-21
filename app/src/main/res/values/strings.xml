@@ -15,4 +15,6 @@
     <string name="notification_layout_title">演示Notification</string>
     <string name="send_notification">发出通知</string>
     <string name="cancel_notification">取消通知</string>
+    <string name="toolbar_title">My Toolbar</string>
+    <string name="toolbar_subtitle">Testing the subtitle of toolbar</string>
 </resources>
