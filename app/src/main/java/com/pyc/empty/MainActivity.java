@@ -85,10 +85,13 @@ public class MainActivity extends Activity {
 
     /*显示对话框*/
     public void dialog_show(View view) {
+
+        View v = getLayoutInflater().inflate(R.layout.dialog_view, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setIcon(R.drawable.alert_dialog)
                 .setTitle("Alert Dialog")
                 .setMessage("Message content of current alert")
+                .setView(v)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
