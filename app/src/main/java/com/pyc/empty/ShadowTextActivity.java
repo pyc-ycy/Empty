@@ -1,10 +1,6 @@
 package com.pyc.empty;
 
-import android.app.Activity;
-import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-
+/*
 public class ShadowTextActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -12,3 +8,4 @@ public class ShadowTextActivity extends Activity {
         setContentView(R.layout.shadow_textview);
     }
 }
+*/
