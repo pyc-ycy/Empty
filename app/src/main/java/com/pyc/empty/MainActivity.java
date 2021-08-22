@@ -9,6 +9,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 
 import java.util.Timer;
@@ -32,7 +34,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
 
-        setContentView(R.layout.alert_dialog);
+        setContentView(R.layout.button_set);
 
         // toolbar
         /*Toolbar tb = findViewById(R.id.tb);
@@ -112,5 +114,19 @@ public class MainActivity extends Activity {
                 })
                 .create()
                 .show();
+    }
+
+    /*显示弹窗*/
+    private PopupWindow popupWindow;
+    public void popup_window_show(View view) {
+        View popupView = getLayoutInflater().inflate(R.layout.popup_window_view, null);
+        popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,true);
+        popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.img206));
+        popupWindow.showAsDropDown(view, view.getWidth(), 20);
+    }
+    /*关闭弹窗*/
+    public void close_popup_window(View view) {
+        popupWindow.dismiss();
     }
 }
