@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:columnCount="4"
+    android:rowCount="4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_gravity="fill"
+        android:layout_rowSpan="2"
+        android:background="@color/colorPrimary"
+        android:text="Num 1"
+        android:layout_height="25dp"
+        android:layout_width="80dp" />
+    <Button
+        android:layout_column="1"
+        android:layout_row="1"
+        android:background="@color/colorPrimary"
+        android:text="Num 2"
+        android:layout_height="25dp"
+        android:layout_width="80dp" />
+    <Button
+        android:layout_column="3"
+        android:layout_row="3"
+        android:background="@color/colorPrimary"
+        android:text="Num 3"
+        android:layout_height="25dp"
+        android:layout_width="80dp" />
+    <Button
+        android:layout_columnSpan="2"
+        android:background="@color/colorPrimary"
+        android:text="Num 4"
+        android:layout_height="25dp"
+        android:layout_width="80dp" />
+    <Button
+        android:layout_column="3"
+        android:background="@color/colorPrimary"
+        android:text="Num 5"
+        android:layout_height="25dp"
+        android:layout_width="80dp" />
+    <Button
+        android:layout_row="3"
+        android:layout_column="1"
+        android:background="@color/colorPrimary"
+        android:text="Num 6"
+        android:layout_height="25dp"
+        android:layout_width="80dp" />
+    <Button
+        android:background="@color/colorPrimary"
+        android:text="Num 7"
+        android:layout_height="25dp"
+        android:layout_width="80dp" />
+    <Button
+        android:layout_column="3"
+        android:background="@color/colorPrimary"
+        android:text="Num 8"
+        android:layout_height="25dp"
+        android:layout_width="80dp" />
+
+</GridLayout>
