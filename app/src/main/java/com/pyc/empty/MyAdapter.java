@@ -39,7 +39,7 @@ public class MyAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         if (convertView == null) {
             viewHolder = new ViewHolder();
-            convertView = LayoutInflater.from(context).inflate(R.layout.list_item, parent,
+            convertView = LayoutInflater.from(context).inflate(R.layout.item, parent,
                     false);
             viewHolder.textView = convertView.findViewById(R.id.tv);
             convertView.setTag(viewHolder);
@@ -54,5 +54,4 @@ public class MyAdapter extends BaseAdapter {
     private final class ViewHolder {
         TextView textView;
     }
-
 }
