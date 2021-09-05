@@ -22,7 +22,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tween_animation);
+        setContentView(R.layout.view_pager);
+
 
     }
 }

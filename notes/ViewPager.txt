@@ -1,0 +1,12 @@
+/*view pager*/
+        LayoutInflater lf = getLayoutInflater().from(this);
+        View view1 = lf.inflate(R.layout.animation_list, null);
+        View view2 = lf.inflate(R.layout.image_view, null);
+        View view3 = lf.inflate(R.layout.frame_layout, null);
+        List<View> viewList = new ArrayList<>(3);
+        viewList.add(view1);
+        viewList.add(view2);
+        viewList.add(view3);
+        ViewPager viewPager = findViewById(R.id.view_page_layout);
+        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(viewList);
+        viewPager.setAdapter(pagerAdapter);
