@@ -1,0 +1,41 @@
+ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, 1f);
+        valueAnimator.setDuration(2000);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                Float value = (Float) animation.getAnimatedValue();
+                Log.e(TAG, "onAnimationUpdate: " + value);
+            }
+        });
+        valueAnimator.start();
+        ImageView view = findViewById(R.id.tween_animation_view);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f);
+        animator.setDuration(4000);
+        animator.start();
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                /*invoke in start*/
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                /*invoke in stop*/
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+            }
+        });
