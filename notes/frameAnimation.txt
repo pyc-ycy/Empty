@@ -1,0 +1,16 @@
+RelativeLayout relativeLayout = findViewById(R.id.animation_list_layout);
+        AnimationDrawable anim = (AnimationDrawable) relativeLayout.getBackground();
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (stop_flag) {
+                    anim.start();
+                    Log.e(TAG, "start animation!!!");
+                    stop_flag = false;
+                } else {
+                    anim.stop();
+                    Log.e(TAG, "stop animation");
+                    stop_flag = true;
+                }
+            }
+        });

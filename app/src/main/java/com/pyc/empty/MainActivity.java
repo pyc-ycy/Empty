@@ -2,10 +2,11 @@ package com.pyc.empty;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RelativeLayout;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,21 +26,15 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.animation_list);
-
-        RelativeLayout relativeLayout = findViewById(R.id.animation_list_layout);
-        AnimationDrawable anim = (AnimationDrawable) relativeLayout.getBackground();
-        relativeLayout.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.tween_animation);
+        ImageView tav = findViewById(R.id.tween_animation_view);
+        tav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (stop_flag) {
-                    anim.start();
-                    stop_flag = false;
-                } else {
-                    anim.stop();
-                    stop_flag = true;
-                }
+                // 通过加载 xml 动画设置文件来创建一个 Animation 对象
+                Animation animation = AnimationUtils.loadAnimation(MainActivity.this,
+                        R.anim.rotate);
+                tav.startAnimation(animation);
             }
         });
 
