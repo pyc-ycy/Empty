@@ -1,0 +1,10 @@
+ ImageView tav = findViewById(R.id.tween_animation_view);
+        tav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 通过加载 xml 动画设置文件来创建一个 Animation 对象
+                Animation animation = AnimationUtils.loadAnimation(MainActivity.this,
+                        R.anim.translate);
+                tav.startAnimation(animation);
+            }
+        });
