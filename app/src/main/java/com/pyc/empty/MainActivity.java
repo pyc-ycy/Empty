@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 // 通过加载 xml 动画设置文件来创建一个 Animation 对象
                 Animation animation = AnimationUtils.loadAnimation(MainActivity.this,
-                        R.anim.rotate);
+                        R.anim.scale);
                 tav.startAnimation(animation);
             }
         });
