@@ -19,4 +19,6 @@
     <string name="toolbar_subtitle">Testing the subtitle of toolbar</string>
     <string name="dialog_button">显示对话框</string>
     <string name="popup_window">显示PopupWindow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="blank_fragment">Hello blank fragment</string>
 </resources>
