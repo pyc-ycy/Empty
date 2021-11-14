@@ -5,10 +5,13 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.pyc.empty.facade.IFragmentCallback;
 import com.pyc.empty.fragments.BlankFragment1;
 import com.pyc.empty.fragments.BlankFragment2;
 
@@ -36,6 +39,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btn1.setOnClickListener(this);
         Button btn2 = findViewById(R.id.d_f_btn2);
         btn2.setOnClickListener(this);
+        Button login_btn = findViewById(R.id.toLogin);
+        login_btn.setOnClickListener(this);
 
     }
 
@@ -43,10 +48,35 @@ public class MainActivity extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.d_f_btn1:
-                replaceFragment(new BlankFragment1());
+                /*Fragment 与 Activity 通信*/
+                Bundle bundle = new Bundle();
+                bundle.putString("msg","使用 Bundle 传递信息");
+                BlankFragment1 blankFragment1 = new BlankFragment1();
+                blankFragment1.setArguments(bundle);
+                replaceFragment(blankFragment1);
                 break;
             case R.id.d_f_btn2:
-                replaceFragment(new BlankFragment2());
+                BlankFragment2 bf2 = new BlankFragment2();
+                bf2.setIFragmentCallback(new IFragmentCallback() {
+                    @Override
+                    public void sendMsgToActivity(String key, String msg) {
+                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public String getMsgFromActivity(String key) {
+                        if (key == "A2F"){
+                            return "This is a message from Activity";
+                        }else {
+                            return "Can not find any message!";
+                        }
+                    }
+                });
+                replaceFragment(bf2);
+                break;
+            case R.id.toLogin:
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -55,6 +85,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.d_f_frameLayout, fragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
     }

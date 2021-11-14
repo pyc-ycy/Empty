@@ -27,6 +27,8 @@ public class BlankFragment1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Bundle bundle = getArguments();
+        String msg = bundle.getString("msg");
         if (root == null) {
             root = inflater.inflate(R.layout.fragment_blank1, container, false);
         }
@@ -35,7 +37,7 @@ public class BlankFragment1 extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("按钮触发修改文本");
+                textView.setText(String.format("按钮触发修改文本Activity 传递过来的msg：%s", msg));
             }
         });
         return root;

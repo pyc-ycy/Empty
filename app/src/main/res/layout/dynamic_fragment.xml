@@ -5,6 +5,12 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/toLogin"
+        android:text="前往登录页"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
         android:id="@+id/d_f_btn1"
         android:text="@string/change"
         android:layout_width="match_parent"
