@@ -41,6 +41,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btn2.setOnClickListener(this);
         Button login_btn = findViewById(R.id.toLogin);
         login_btn.setOnClickListener(this);
+        Button toViewpager2 = findViewById(R.id.toViewpager2);
+        toViewpager2.setOnClickListener(this);
 
     }
 
@@ -77,6 +79,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
             case R.id.toLogin:
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.toViewpager2:
+                Intent intent1 = new Intent(MainActivity.this, Viewpager2Activity.class);
+                startActivity(intent1);
                 break;
         }
     }
